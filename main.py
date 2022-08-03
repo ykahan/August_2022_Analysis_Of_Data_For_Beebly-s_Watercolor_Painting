@@ -70,11 +70,23 @@ for email in unique_emails_new_piano:
       if email not in unique_emails_ultracart and email not in total_unique_emails and email not in unique_emails_piano:
             total_unique_emails.append(email)
 
+num_unique_emails_piano = len(unique_emails_piano)
+num_unique_emails_new_piano = len(unique_emails_new_piano)
+num_unique_emails_ultracart = len(unique_emails_ultracart)
+num_unique_names_bluesnap = len(unique_names_bluesnap)
+num_total_unique_emails = len(total_unique_emails)
 
-print(f"New Piano has {len(unique_emails_new_piano)} unique emails.\n"
-      f"Piano has {len(unique_emails_piano)} unique emails.\n"
-      f"Bluesnap has {len(unique_names_bluesnap)} unique names.\n"
-      f"Ultracart has {len(unique_emails_ultracart)} unique emails.\n"
-      f"There are {len(total_unique_emails)} total unique emails.\n"
-      f"There are {len(unique_names_bluesnap)} unique names in BlueSnap.")
+percent_uniques_piano = num_unique_emails_piano / num_piano_entries
+percent_uniques_new_piano = num_unique_emails_new_piano / num_new_piano_entries
+percent_uniques_ultracart = num_unique_emails_ultracart / num_ultracart_entries
+percent_uniques_bluesnap = num_unique_names_bluesnap / num_bluesnap_entries
+percent_uniques_total_emails = (num_total_unique_emails + num_unique_names_bluesnap) / num_total_entries
+
+print(f"Uniques percentage is {percent_uniques_total_emails * 100}%")
+
+print(f"New Piano has {num_unique_emails_new_piano} unique emails.\n"
+      f"Piano has {num_unique_emails_piano} unique emails.\n"
+      f"Bluesnap has {num_unique_names_bluesnap} unique names.\n"
+      f"Ultracart has {num_unique_emails_ultracart} unique emails.\n"
+      f"There are {num_total_unique_emails} total unique emails.")
 
